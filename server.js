@@ -9,6 +9,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data to the req.body js object
 app.use(express.json());
+// Serve Static Files
+app.use(express.static('public'));
 
 
 // Filter functionality
@@ -114,6 +116,28 @@ app.post('/api/animals', (req, res) => {
         res.json(animal);
     }
 });
+
+// Create route for index.html ('/' is the root route of the server)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+// Create route for animals.html
+app.get('/animals', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+
+// Create route for zookeepers.html
+app.get('/zookeepers', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+
+// Create route for wildcard
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+
 
 // listens for connections on the specified host and port 
 app.listen(PORT, () => {
