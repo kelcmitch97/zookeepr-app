@@ -117,24 +117,7 @@
         "hungry"
       ],
       "id": "11"
-    },
-    {
-      "name": "Kelcie",
-      "species": "Tiger",
-      "diet": "herbivore",
-      "personalityTraits": [
-        "zany"
-      ],
-      "id": "12"
-    },
-    {
-      "name": "Kelcie",
-      "species": "Tiger",
-      "diet": "herbivore",
-      "personalityTraits": [
-        "hungry"
-      ],
-      "id": "13"
     }
+
   ]
 }
